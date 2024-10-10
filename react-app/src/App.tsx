@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import CustomStringify from "./components/CustomStringify";
+import CustomAssign from './components/CustomAssign';
+import DeepEqual from './components/DeepEqual';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/stringify">Custom Stringify</Link>
+          </li>
+          <li>
+            <Link to="/assign">Custom Assign</Link>
+          </li>
+          <li>
+            <Link to="/deep-equal">Deep Equal</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/stringify" element={<CustomStringify />} />
+        <Route path="/assign" element={<CustomAssign />} />
+        <Route path="/deep-equal" element={<DeepEqual />} />
+        <Route path="/" element={<h2>Bienvenido a los Ejercicios</h2>} />
+      </Routes>
+    </Router>
   );
 }
 
