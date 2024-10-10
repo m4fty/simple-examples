@@ -1,0 +1,8 @@
+{
+    "name": "ejercicios-js",
+    "private": true,
+    "workspaces": [
+        "react-app",
+        "vue-app"
+    ]
+}
